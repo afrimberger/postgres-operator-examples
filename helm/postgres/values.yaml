@@ -257,6 +257,10 @@ postgresVersion: 17
 #     key: ""
 #     container: ""
 
+# use external secret for s3, gcs and azure instead of passing secret values via values.yaml
+# name of the secret: "{{ default .Release.Name .Values.name }}-pgbackrest-secret"
+useExternalPgBackRestSecret: false
+
 # pgBackRestConfig allows for the configuration of every pgBackRest option
 # except for "image", which is set by "pgBackRest".
 # pgBackRestConfig: {}
